@@ -146,7 +146,7 @@ The quote's `report_data` field contains `sha256(statement)`. Verify it matches:
 
 ```bash
 # Extract statement from response and hash it
-cat response.json | jq -r '.statement | @json' | shasum -a 256
+cat response.json | jq -cj '.statement' | shasum -a 256
 
 # Compare with reportDataHash in response
 cat response.json | jq -r '.reportDataHash'
