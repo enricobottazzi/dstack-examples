@@ -30,8 +30,10 @@ The TLS fingerprint proves which server the TEE connected to. The quote proves t
 # Start the simulator
 phala simulator start
 
+docker compose build --no-cache
 # Run the oracle
 docker compose run --rm \
+  -p 8080:8080 \
   -v ~/.phala-cloud/simulator/0.5.3/dstack.sock:/var/run/dstack.sock \
   app
 ```
