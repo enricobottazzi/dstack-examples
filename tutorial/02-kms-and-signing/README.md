@@ -54,7 +54,7 @@ result.signature_chain[1]     // KMS signature: kmsRoot signs appPubkey
 pip install -r requirements.txt
 phala simulator start
 
-docker compose build
+docker compose build --no-cache
 docker compose run --rm -p 8080:8080 \
   -v ~/.phala-cloud/simulator/0.5.3/dstack.sock:/var/run/dstack.sock \
   app

@@ -59,8 +59,8 @@ If both succeed, you have a reproducible build.
 Docker builds are **not reproducible by default**:
 
 ```bash
-$ docker build -t test:v1 .
-$ docker build -t test:v2 .
+$ docker build --no-cache -t test:v1 .
+$ docker build --no-cache -t test:v2 .
 $ docker inspect test:v1 --format='{{.Id}}'
 sha256:a1b2c3...
 $ docker inspect test:v2 --format='{{.Id}}'
